@@ -56,7 +56,7 @@ The candidate must:
 - Vue.js
 - CSS Grid and Flexbox
 
-[Task description (https://www.notion.so/francin/ving-2-Kalkulator-i-Vue-d02ff3cb21be4a9e8186b66f1de9fbfb)
+[Task description (in Norwegian)](https://www.notion.so/francin/ving-2-Kalkulator-i-Vue-d02ff3cb21be4a9e8186b66f1de9fbfb)
 
 [My delivery]()
 
