@@ -48,7 +48,9 @@ The candidate must:
 
 [Task description (in Norwegian)](https://francin.notion.site/ving-1-HTML-CSS-og-Javascript-74ad0341ed8a42d1b5614f3f11e3b6f7)
 
-[My delivery]()
+[Go to code](https://github.com/francinv/IDATT2105/tree/main/Ex1)
+
+[See demo](https://folk.ntnu.no/francinv/IDATT2105/Ex1/)
 
 ### Delivery 2
 
