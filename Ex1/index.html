@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nb">
+    <head>
+        <meta charset="UTF-8">
+        <title>Øving 1 - Francin Vincent</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/04055e54f1.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="p-md radius-lg m-sm">
+                <img id="logo" src="img/logo.png" alt="NTNU logo" width="250">
+            </header>
+            <nav class="radius-lg font-secondary p-md m-sm flex-row">
+                <ul id="menu_list" class="ml-sm p-0">
+                    <li class="p-0 my-sm list_element">
+                        <a href=""><span class="mr-xs">🏠</span>Hjem</a>
+                    </li>
+                    <li class="my-sm p-0 list_element">
+                        <a href=""><span class="mr-xs">👨🏾‍🦱</span>Om meg</a>
+                    </li>
+                    <li class="my-sm p-0 list_element">
+                        <a href=""><span class="mr-xs">📱</span>Kontakt</a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="font-tertiary m-sm p-md">
+                <article>
+                    <div class="flex-row justify-between">
+                        <h1>Hva har jeg fokusert på? 🤓</h1>
+                        <button class="btn" onclick="hideTextBlock('block-one-hideable')">
+                            <i class="fa-regular fa-eye-slash fa-2x"></i>
+                        </button>
+                    </div>
+                    <div id="block-one-hideable" class="grid-right display-block">
+                        <div>
+                            <p class="mt-0">Clean design er veldig viktig for meg. Dermed har jeg prøvd å holde nettsiden ren og ryddig. For å forbedre brukeropplevelsen
+                            har jeg valgt å legge til noen små animasjoner som aktiveres når du hoverer over forskjellige element. Disse elementene endrer seg
+                            under hovering:</p>
+                            <ul>
+                                <li><code>header</code></li>
+                                <li><code>meny</code></li>
+                                <li><code>footer</code></li>
+                            </ul>
+                        </div>
+                        <img src="img/design.jpg" alt="Good design" width="250" class="radius-md"/>
+                    </div>
+                </article>
+                <article>
+                    <div class="flex-row justify-between">
+                        <h1>Har jeg svart på oppgaven? 🤔</h1>
+                        <button class="btn"><i class="fa-regular fa-eye-slash fa-2x" onclick="hideTextBlock('block-two-hideable')"></i></button>
+                    </div>
+                    <div id="block-two-hideable" class="grid-left display-block">
+                        <img src="img/tasks.jpg" alt="Reading a book" width="250" class="radius-md">
+                        <p class="mt-0">Jeg håper da det.... Neida, personlig mener jeg det. Jeg har med alle de ønskede elementene og mer.
+                            Når det kommer til CSS har jeg mer enn bare det som ble forespurt. Jeg har brukt <b>CSS Grid</b> for å plassere elementene
+                            på siden, videre har jeg brukt media queries til å gjøre
+                        siden responsiv. Om du prøver å gjøre vinduet mindre vil du se at elementene blir mindre. Når du er på veldig liten skjerm</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="flex-col justify-between">
+                        <h1>Hva kan jeg fra før av?</h1>
+                        <div class="grid-right">
+                            <ul id="keywords-list"></ul>
+                            <img id="keyword-img" src="img/code.jpg" alt="Computer with code" class="radius-md" width="275" style="align-self: center">
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="flex-col justify-between items-center">
+                        <h1>Tell med meg 🔢</h1>
+                        <div id="counter" class="flex-row radius-md justify-around items-center mr-md">
+                            <button id="decrease" class="btn">
+                                <i class="fa-regular fa-square-minus fa-3x"></i>
+                            </button>
+                            <h2 id="counter-number">0</h2>
+                            <button id="increase" class="btn btn-rounded">
+                                <i class="fa-regular fa-square-plus fa-3x"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </main>
+            <footer class="p-md radius-lg flex-row justify-center m-sm">
+                <h1 id="footer_text" class="font-tertiary">Made with ❤️️ by Francin</h1>
+            </footer>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

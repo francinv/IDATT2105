@@ -1,0 +1,273 @@
+/**
+    HTML TAG STYLING
+    Jeg velger å bruke direkte tag styling når det er CSS som kan gjenbrukes på flere sider.
+ */
+html {
+    height: 100vh;
+    width: 100vw;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: darkslategrey;
+    color: white;
+    transition: 0.5s ease-in-out;
+}
+article {
+    font-family: 'Mulish', sans-serif;
+}
+header {
+    background-color: antiquewhite;
+    grid-area: header;
+}
+footer {
+    background-image: url("img/footer-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-area: footer;
+}
+nav {
+    background: rgba(0, 0, 0, 0.3);
+    grid-area: menubar;
+}
+ul {
+    list-style: none;
+}
+li {
+    transition: 0.5s ease-in-out;
+}
+main {
+    grid-area: main;
+}
+i {
+    color: white;
+}
+p {
+    /* Spacing between lines */
+    line-height: 1.75;
+}
+
+.wrapper {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(60px, auto) minmax(100px, auto) 1fr minmax(60px, auto);
+    grid-template-areas:
+            "header"
+            "menubar"
+            "main"
+            "footer";
+    grid-row-gap: 12px;
+    grid-column-gap: 12px;
+}
+#menu_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+#counter {
+    height: 50px;
+    width: 200px;
+    background-color: antiquewhite;
+    color: black;
+}
+#counter i {
+    color: black;
+}
+#counter-number {
+    width: 50%;
+    text-align: center;
+}
+#keywords-list {
+    margin: 0;
+}
+.grid-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 8px;
+}
+.grid-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 8px;
+}
+
+/* Remove styling of btn */
+.btn {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+/**
+    HOVER STATE
+    Når brukeren holder musepekeren over et element vil det endre seg, enten
+    ved å starte en animasjon eller ved å skalere størrelsen.
+ */
+header:hover #logo {
+    animation: moveUpDown 0.5s ease-in-out infinite alternate;
+}
+footer:hover #footer_text {
+    transform: scale3d(1.05, 1.05 , 1.05);
+}
+#menu_list li:hover {
+    transform: translateX(4px);
+}
+#footer_text {
+    transition: 0.5s ease-in-out;
+}
+
+
+/**
+    KLASSER
+    Jeg lager overordnede klasser for å kunne gjenbruke stylingen på flere sider.
+ */
+.flex-row {
+    display: flex;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.items-start {
+    align-items: flex-start;
+}
+.items-center {
+    align-items: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-around {
+    justify-content: space-around;
+}
+
+.font-primary {
+    font-family: 'Montserrat', sans-serif;
+}
+.font-secondary {
+    font-family: 'Mulish', sans-serif;
+}
+.font-tertiary {
+    font-family: 'Raleway', sans-serif;
+}
+
+.ml-sm {
+    margin-left: 8px;
+}
+.ml-xl {
+    margin-left: 32px;
+}
+.mr-xs {
+    margin-right: 4px;
+}
+.mr-md {
+    margin-right: 16px;
+}
+.my-sm {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.my-md {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+}
+.m-sm {
+    margin: 8px;
+}
+.mt-0 {
+    margin-top: 0;
+}
+
+.pl-sm {
+    padding-left: 8px;
+}
+.p-0 {
+    padding: 0;
+}
+.p-md {
+    padding: 12px;
+}
+
+.radius-md {
+    border-radius: 8px;
+}
+.radius-lg {
+    border-radius: 18px;
+}
+
+.display-none {
+    display: none !important;
+}
+.display-block {
+    display: grid;
+}
+
+/**
+    ANIMASJONER
+ */
+
+/* Animasjon for å flytte et element opp og ned */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.list_element a {
+    border-bottom: 1px solid white;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/**
+    RESPONSIV STYLING
+    Jeg bruker media queries for å endre på stylingen av siden basert på skjermstørrelse.
+ */
+@media only screen and (min-width: 768px){
+    header {
+        justify-content: flex-start;
+    }
+}
+@media only screen and (min-width: 768px){
+    /* Responsive grid */
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: minmax(60px, auto) 1fr minmax(60px, auto);
+        grid-template-areas:
+        "header header header header"
+        "menubar main main main"
+        "footer footer footer footer";
+    }
+    #menu_list {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .grid-left {
+        grid-template-columns: minmax(275px, auto) 1fr;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .grid-right {
+        grid-template-columns: 1fr minmax(275px, auto);
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
