@@ -48,7 +48,7 @@ The candidate must:
 
 [Task description (in Norwegian)](https://francin.notion.site/ving-1-HTML-CSS-og-Javascript-74ad0341ed8a42d1b5614f3f11e3b6f7)
 
-[Go to code](https://github.com/francinv/IDATT2105/tree/main/Ex1)
+[Go to code](./Ex1)
 
 [See demo](https://folk.ntnu.no/francinv/IDATT2105/Ex1/)
 
@@ -60,7 +60,10 @@ The candidate must:
 
 [Task description (in Norwegian)](https://www.notion.so/francin/ving-2-Kalkulator-i-Vue-d02ff3cb21be4a9e8186b66f1de9fbfb)
 
-[My delivery]()
+[Go to code](./Ex2)
+
+[See demo](https://calculator-idatt2105.vercel.app)
+
 
 
 
