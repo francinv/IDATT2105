@@ -9,6 +9,7 @@
       :placeholder="label"
       :aria-describedby="error ? `${uuid}-error` : null"
       :aria-invalid="!!error"
+      :name="name"
     />
     <p class="input-error" v-if="error" :id="`${uuid}-error`">{{ error }}</p>
   </div>
@@ -31,6 +32,10 @@ export default {
     },
     modelValue: {
       type: [String, Number],
+      default: ''
+    },
+    name: {
+      type: String,
       default: ''
     }
   },

@@ -148,7 +148,7 @@ li {
 .form-input-container {
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
+    margin: 0.8rem 0;
 }
 
 .btn-container {
@@ -206,3 +206,30 @@ li {
     background-color: rgba(129, 124, 123, 0.5);
     cursor: not-allowed;
 }
+
+.error-message {
+    margin: 12px;
+    border-radius: 12px;
+    color: white;
+    background-color: rgba(223, 120, 122, 0.3);
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message, .success-message p {
+    font-size: 18px;
+}
+
+.success-message {
+    margin: 12px;
+    border-radius: 12px;
+    color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 255, 0, 0.3);
+}
+

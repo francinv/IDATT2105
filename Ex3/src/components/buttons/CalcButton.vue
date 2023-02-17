@@ -1,5 +1,6 @@
 <script lang="ts">
 export default {
+  name: "CalcButton",
   props: {
     label: {
       type: String,

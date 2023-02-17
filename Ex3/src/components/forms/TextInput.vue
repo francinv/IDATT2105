@@ -2,6 +2,7 @@
   <div class="form-input-container">
     <label v-if="label" :for="uuid">{{ label }}</label>
     <input
+      :name="name"
       class="base_input"
       v-bind="{ ...$attrs, onInput: updateValue}"
       :id="uuid"
@@ -31,6 +32,10 @@ export default {
     },
     modelValue: {
       type: [String, Number],
+      default: ''
+    },
+    name: {
+      type: String,
       default: ''
     }
   },

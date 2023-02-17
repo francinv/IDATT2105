@@ -2,6 +2,15 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "prettier"],
+  parserOptions: {
+    ecmaVersion: 2020,
+  },
+  extends: [
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "prettier",
+    "plugin:cypress/recommended",
+  ],
+  plugins: ["cypress"],
   rules: {},
 };
