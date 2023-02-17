@@ -11,6 +11,6 @@ module.exports = {
     "prettier",
     "plugin:cypress/recommended",
   ],
-  plugins: ["cypress"],
+  plugins: ["cypress", "vitest"],
   rules: {},
 };
