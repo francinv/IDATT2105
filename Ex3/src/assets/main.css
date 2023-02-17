@@ -23,7 +23,7 @@ main {
     align-items: center;
 }
 
-input[type='text'] {
+.calc-input {
   height: 80px;
   font-size: 32px;
   width: 100%;
@@ -34,7 +34,7 @@ input[type='text'] {
   color: white;
 }
 
-input:focus {
+.calc-input:focus {
   outline: none;
 }
 .calculator-container {
@@ -143,4 +143,61 @@ li {
 
 .flex {
     display: flex;
+}
+
+.form-input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-submit {
+    margin-top: 1rem;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    background-color: rgb(242, 163, 60);
+    border-radius: 12px;
+    color: white;
+}
+
+.input-label, .text-area-label {
+    color: white;
+    font-size: 20px;
+    margin-top: 0.8rem;
+}
+.base_input {
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    background-color: rgba(44, 39, 38, 0.5);
+    border-radius: 12px;
+    color: white;
+}
+
+.text-area {
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    background-color: rgba(44, 39, 38, 0.5);
+    border-radius: 12px;
+    color: white;
+    resize: none;
+    min-width: 320px;
+}
+
+.input-error {
+    color: red;
+    font-size: 10px;
+    margin-bottom: 4px;
+    margin-left: auto;
 }

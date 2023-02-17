@@ -1,9 +1,4 @@
-import { Operators } from "@/operators";
-
-export const isNumericString = (value: string): boolean => {
-  return !isNaN(Number(value));
-};
-
+import { Operators } from "@/lib/enums/operators";
 export const calculate = (
   firstNumber: string,
   secondNumber: string,

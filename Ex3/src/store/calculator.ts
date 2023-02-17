@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
-import { Operators } from "@/operators";
-import { calculate, isNumberValues, parseFromInput } from "@/util";
+import { Operators } from "@/lib/enums/operators";
+import { calculate, isNumberValues, parseFromInput } from "@/utils/util";
 
 export const useCalculatorStore = defineStore("calculator", {
   state: () => ({

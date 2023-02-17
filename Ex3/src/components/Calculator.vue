@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import CalcInput from "@/components/CalcInput.vue";
-import CalcButton from "@/components/CalcButton.vue";
-import { useCalculatorStore } from "@/calculator";
+import CalcInput from "@/components/forms/CalcInput.vue";
+import CalcButton from "@/components/buttons/CalcButton.vue";
+import { useCalculatorStore } from "@/store/calculator";
 import { storeToRefs } from "pinia";
 
 const { showErrorMessage } = storeToRefs(useCalculatorStore());
