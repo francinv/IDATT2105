@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import CalcLog from "@/components/CalcLog.vue";
-import Calculator from "@/components/Calculator.vue";
+import { CalcLog, Calculator } from "@/components";
 </script>
 
 <template>
@@ -15,7 +14,6 @@ import Calculator from "@/components/Calculator.vue";
     <h1>Kalkulator</h1>
     <p>En enkel kalkulator med design inspirasjon fra Apple.</p>
   </header>
-
   <main>
     <Calculator />
     <CalcLog />

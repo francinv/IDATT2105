@@ -1,12 +1,11 @@
 <script lang="ts">
-import TextInput from "@/components/forms/TextInput.vue";
-import TextArea from "@/components/forms/TextArea.vue";
-import Button from "@/components/buttons/Button.vue";
+import { BaseButton, TextInput, TextArea } from "@/components";
 import { useField, useForm } from "vee-validate";
 import contactSchema from "@/schemas";
 
 
 export default {
+  components: {BaseButton, TextArea, TextInput},
   setup() {
     const { handleSubmit, errors, resetField } = useForm({
       validationSchema: contactSchema
@@ -33,8 +32,7 @@ export default {
       errors,
       isValid
     };
-  },
-  components: {Button, TextArea, TextInput}
+  }
 };
 </script>
 
@@ -52,10 +50,10 @@ export default {
   </header>
   <main>
     <form class="contact-form" @submit.prevent="submit">
-      <TextInput label="Navn" placeholder="Ditt navn" type="text" :error="errors.name" v-model="name" />
-      <TextInput label="E-post" placeholder="Din e-post" type="email" :error="errors.email" v-model="email" />
-      <TextArea label="Din melding" placeholder="Skriv din melding her" rows="5" :error="errors.message" v-model="message" />
-      <Button type="submit" label="Send" buttonClass="btn-submit" :disabled="!isValid()"/>
+      <TextInput v-model="name" label="Navn" placeholder="Ditt navn" type="text" :error="errors.name" />
+      <TextInput v-model="email" label="E-post" placeholder="Din e-post" type="email" :error="errors.email" />
+      <TextArea v-model="message" label="Din melding" placeholder="Skriv din melding her" rows="5" :error="errors.message" />
+      <BaseButton type="submit" label="Send" button-class="btn-submit" :disabled="!isValid()"/>
     </form>
   </main>
 </template>

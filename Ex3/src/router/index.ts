@@ -1,5 +1,4 @@
-import CalculatorView from "@/views/CalculatorView.vue";
-import ContactView from "@/views/ContactView.vue";
+import { ContactView, CalculatorView } from "@/views";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [

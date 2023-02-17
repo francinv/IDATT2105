@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
-import { useCalculatorStore } from "@/store/calculator";
+import { useCalculatorStore } from "@/store";
 
 const { log } = storeToRefs(useCalculatorStore());
 </script>

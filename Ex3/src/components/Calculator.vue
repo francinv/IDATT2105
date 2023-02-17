@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import CalcInput from "@/components/forms/CalcInput.vue";
-import CalcButton from "@/components/buttons/CalcButton.vue";
-import { useCalculatorStore } from "@/store/calculator";
+import {CalcInput, CalculatorButton} from "@/components";
+import { useCalculatorStore } from "@/store";
 import { storeToRefs } from "pinia";
 
 const { showErrorMessage } = storeToRefs(useCalculatorStore());
@@ -25,29 +24,29 @@ const {
       <CalcInput />
     </div>
     <div class="button-container">
-      <CalcButton label="AC" :action="clear" class="dark-gray" />
-      <CalcButton label="+/-" :action="negate" class="dark-gray" />
-      <CalcButton label="DEL" :action="del" class="dark-gray" />
-      <CalcButton label="÷" :action="divide" class="orange" />
-      <CalcButton label="7" :action="() => setNumber(7)" class="light-gray" />
-      <CalcButton label="8" :action="() => setNumber(8)" class="light-gray" />
-      <CalcButton label="9" :action="() => setNumber(9)" class="light-gray" />
-      <CalcButton label="x" :action="multiply" class="orange" />
-      <CalcButton label="4" :action="() => setNumber(4)" class="light-gray" />
-      <CalcButton label="5" :action="() => setNumber(5)" class="light-gray" />
-      <CalcButton label="6" :action="() => setNumber(6)" class="light-gray" />
-      <CalcButton label="-" :action="subtract" class="orange" />
-      <CalcButton label="1" :action="() => setNumber(1)" class="light-gray" />
-      <CalcButton label="2" :action="() => setNumber(2)" class="light-gray" />
-      <CalcButton label="3" :action="() => setNumber(3)" class="light-gray" />
-      <CalcButton label="+" :action="addition" class="orange" />
-      <CalcButton
+      <CalculatorButton label="AC" :action="clear" class="dark-gray" />
+      <CalculatorButton label="+/-" :action="negate" class="dark-gray" />
+      <CalculatorButton label="DEL" :action="del" class="dark-gray" />
+      <CalculatorButton label="÷" :action="divide" class="orange" />
+      <CalculatorButton label="7" :action="() => setNumber(7)" class="light-gray" />
+      <CalculatorButton label="8" :action="() => setNumber(8)" class="light-gray" />
+      <CalculatorButton label="9" :action="() => setNumber(9)" class="light-gray" />
+      <CalculatorButton label="x" :action="multiply" class="orange" />
+      <CalculatorButton label="4" :action="() => setNumber(4)" class="light-gray" />
+      <CalculatorButton label="5" :action="() => setNumber(5)" class="light-gray" />
+      <CalculatorButton label="6" :action="() => setNumber(6)" class="light-gray" />
+      <CalculatorButton label="-" :action="subtract" class="orange" />
+      <CalculatorButton label="1" :action="() => setNumber(1)" class="light-gray" />
+      <CalculatorButton label="2" :action="() => setNumber(2)" class="light-gray" />
+      <CalculatorButton label="3" :action="() => setNumber(3)" class="light-gray" />
+      <CalculatorButton label="+" :action="addition" class="orange" />
+      <CalculatorButton
         label="0"
         :action="() => setNumber(0)"
         class="light-gray left radius-left"
       />
-      <CalcButton label="," :action="decimal" class="light-gray right" />
-      <CalcButton
+      <CalculatorButton label="," :action="decimal" class="light-gray right" />
+      <CalculatorButton
         label="="
         :action="equals"
         class="orange right-last radius-right"

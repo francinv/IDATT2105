@@ -1,13 +1,28 @@
 <script lang="ts">
 export default {
   props: {
-    label: String,
-    action: Function,
-    style: String,
+    label: {
+      type: String,
+      default: '',
+    },
+    action: {
+      type: Function,
+      default: () => {},
+    },
+    style: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>
 
 <template>
-  <button @click="action" :class="style" class="calc-btn">{{ label }}</button>
+  <button
+    :class="style"
+    class="calc-btn"
+    @click="action"
+  >
+    {{ label }}
+  </button>
 </template>

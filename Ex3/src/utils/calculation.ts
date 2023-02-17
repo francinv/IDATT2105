@@ -1,4 +1,4 @@
-import { Operators } from "@/lib/enums/operators";
+import { Operators } from "@/lib";
 export const calculate = (
   firstNumber: string,
   secondNumber: string,
