@@ -148,6 +148,7 @@ li {
 .form-input-container {
     display: flex;
     flex-direction: column;
+    margin: 1rem 0;
 }
 
 .btn-container {
@@ -169,7 +170,6 @@ li {
 .input-label, .text-area-label {
     color: white;
     font-size: 20px;
-    margin-top: 0.8rem;
 }
 .base_input {
     border: none;
@@ -180,6 +180,7 @@ li {
     background-color: rgba(44, 39, 38, 0.5);
     border-radius: 12px;
     color: white;
+    min-width: 320px;
 }
 
 .text-area {
@@ -198,6 +199,10 @@ li {
 .input-error {
     color: red;
     font-size: 10px;
-    margin-bottom: 4px;
     margin-left: auto;
+}
+
+.btn-disabled {
+    background-color: rgba(129, 124, 123, 0.5);
+    cursor: not-allowed;
 }

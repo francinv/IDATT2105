@@ -1,6 +1,6 @@
 <template>
-  <div class="btn-container">
-    <button :type="type" :class="buttonClass" @click="action">
+  <div class="btn-container" >
+    <button :type="type" :class="[buttonClass, {'btn-disabled': disabled}]" @click="action" :disabled="disabled">
       {{ label }}
     </button>
   </div>
@@ -14,6 +14,7 @@ export default {
     type: String,
     action: Function,
     buttonClass: String,
+    disabled: Boolean
   },
 };
 </script>

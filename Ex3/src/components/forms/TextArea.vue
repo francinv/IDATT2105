@@ -1,22 +1,48 @@
 <template>
   <div class="form-input-container">
-    <label for="text-area" class="text-area-label">{{ label }}</label>
-    <textarea id="area" name="text-area" :rows="rows" :value="value" :placeholder="placeholder" @change="action" class="text-area"></textarea>
-    <p class="input-error" v-if="error">{{ error }}</p>
+    <label v-if="label" :for="uuid">{{ label }}</label>
+    <textarea
+      class="text-area"
+      v-bind="{ ...$attrs, onInput: updateValue}"
+      :id="uuid"
+      :value="modelValue"
+      :placeholder="label"
+      :aria-describedby="error ? `${uuid}-error` : null"
+      :aria-invalid="!!error"
+    />
+    <p class="input-error" v-if="error" :id="`${uuid}-error`">{{ error }}</p>
   </div>
 </template>
 
 <script lang="ts">
+import type {ComponentObjectPropsOptions} from "vue";
+import {generateUUID, SetupFormComponent} from "@/utils";
+
 export default {
   name: "TextArea",
   props: {
-    label: String,
-    value: String,
-    rows: Number,
-    placeholder: String,
-    action: Function,
-    error: String,
+    label: {
+      type: String,
+      default: ''
+    },
+    error: {
+      type: String,
+      default: ''
+    },
+    modelValue: {
+      type: [String, Number],
+      default: ''
+    }
   },
+  setup (props: ComponentObjectPropsOptions, context: any) {
+    const { updateValue } = SetupFormComponent(props, context);
+    const uuid = generateUUID();
+
+    return {
+      updateValue,
+      uuid
+    };
+  }
 };
 </script>
 
