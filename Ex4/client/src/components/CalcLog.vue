@@ -31,7 +31,7 @@ export default {
       </button>
     </div>
     <ol :class="showLogClass">
-      <li v-for="element in log" :key="element">{{ element }}</li>
+      <li v-for="element in log" v-bind:key="element">{{ element }}</li>
     </ol>
   </div>
 </template>

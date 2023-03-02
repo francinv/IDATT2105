@@ -2,25 +2,24 @@
   <div class="form-input-container">
     <label v-if="label" :for="uuid">{{ label }}</label>
     <textarea
+      class="text-area"
       v-bind="{ ...$attrs, onInput: updateValue}"
       :id="uuid"
-      class="text-area"
       :value="modelValue"
       :placeholder="label"
-      :aria-describedby="error ? `${uuid}-error` : undefined"
+      :aria-describedby="error ? `${uuid}-error` : null"
       :aria-invalid="!!error"
       :name="name"
     />
-    <p v-if="error" :id="`${uuid}-error`" class="input-error">{{ error }}</p>
+    <p class="input-error" v-if="error" :id="`${uuid}-error`">{{ error }}</p>
   </div>
 </template>
 
 <script lang="ts">
+import type {ComponentObjectPropsOptions} from "vue";
 import {generateUUID, SetupFormComponent} from "@/utils";
-import { defineComponent } from "vue";
 
-export type ModelType = string | number | undefined;
-export default defineComponent({
+export default {
   name: "TextArea",
   props: {
     label: {
@@ -40,7 +39,7 @@ export default defineComponent({
       default: ''
     }
   },
-  setup (props, context) {
+  setup (props: ComponentObjectPropsOptions, context: any) {
     const { updateValue } = SetupFormComponent(props, context);
     const uuid = generateUUID();
 
@@ -49,7 +48,7 @@ export default defineComponent({
       uuid
     };
   }
-});
+};
 </script>
 
 

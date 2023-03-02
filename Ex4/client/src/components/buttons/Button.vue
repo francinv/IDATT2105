@@ -4,7 +4,7 @@
       :type="type"
       :class="[buttonClass, {'btn-disabled': disabled}]"
       :disabled="disabled"
-      @click="(e: MouseEvent) => {action(e); return e;}"
+      @click="action"
     >
       {{ label }}
     </button>
@@ -12,9 +12,6 @@
 </template>
 
 <script lang="ts">
-
-export type ButtonType = 'submit' | 'reset' | 'button' | undefined;
-
 export default {
   name: "BaseButton",
   props: {
@@ -23,8 +20,8 @@ export default {
       default: ''
     },
     type: {
-      type: String as () => ButtonType,
-      default: 'button',
+      type: String,
+      default: 'button'
     },
     action: {
       type: Function,

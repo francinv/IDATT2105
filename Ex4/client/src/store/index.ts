@@ -1,8 +1,11 @@
 import { defineStore } from "pinia";
 import { Operators } from "@/lib";
 import { calculate, isNumberValues, parseFromInput } from "@/utils";
-import { EventTarget } from "happy-dom";
+import Client from "@/server/client";
 
+export const client = new Client(
+  "https://idatt2105-production.up.railway.app/api"
+);
 export const useCalculatorStore = defineStore("calculator", {
   state: () => ({
     firstNumber: "0",
@@ -34,13 +37,12 @@ export const useCalculatorStore = defineStore("calculator", {
         this.secondNumber = (Number(this.secondNumber) * -1).toString();
       }
     },
-    divide() {
+    async divide() {
       if (this.isSecondNumberState) {
-        this.result = calculate(
-          this.firstNumber,
-          this.secondNumber,
-          Operators.DIVIDE
-        );
+        this.result = await client.divide({
+          a: Number(this.firstNumber),
+          b: Number(this.secondNumber),
+        });
         this.log.push(
           `${this.firstNumber} ${this.operator} ${this.secondNumber} = ${this.result}`
         );
@@ -50,13 +52,12 @@ export const useCalculatorStore = defineStore("calculator", {
         this.operator = Operators.DIVIDE;
       }
     },
-    multiply() {
+    async multiply() {
       if (this.isSecondNumberState) {
-        this.result = calculate(
-          this.firstNumber,
-          this.secondNumber,
-          Operators.MULTIPLY
-        );
+        this.result = await client.multiply({
+          a: Number(this.firstNumber),
+          b: Number(this.secondNumber),
+        });
         this.log.push(
           `${this.firstNumber} ${this.operator} ${this.secondNumber} = ${this.result}`
         );
@@ -77,13 +78,12 @@ export const useCalculatorStore = defineStore("calculator", {
         }
       }
     },
-    subtract() {
+    async subtract() {
       if (this.isSecondNumberState) {
-        this.result = calculate(
-          this.firstNumber,
-          this.secondNumber,
-          Operators.SUBTRACT
-        );
+        this.result = await client.subtract({
+          a: Number(this.firstNumber),
+          b: Number(this.secondNumber),
+        });
         this.log.push(
           `${this.firstNumber} ${this.operator} ${this.secondNumber} = ${this.result}`
         );
@@ -93,13 +93,12 @@ export const useCalculatorStore = defineStore("calculator", {
         this.operator = Operators.SUBTRACT;
       }
     },
-    addition() {
+    async addition() {
       if (this.isSecondNumberState) {
-        this.result = calculate(
-          this.firstNumber,
-          this.secondNumber,
-          Operators.ADD
-        );
+        this.result = await client.addition({
+          a: Number(this.firstNumber),
+          b: Number(this.secondNumber),
+        });
         this.log.push(
           `${this.firstNumber} ${this.operator} ${this.secondNumber} = ${this.result}`
         );
@@ -120,9 +119,9 @@ export const useCalculatorStore = defineStore("calculator", {
         }
       }
     },
-    equals() {
+    async equals() {
       if (this.operator) {
-        this.result = calculate(
+        this.result = await calculate(
           this.firstNumber,
           this.secondNumber,
           this.operator!!
@@ -150,13 +149,12 @@ export const useCalculatorStore = defineStore("calculator", {
         }
       }
     },
-    calculateFromInput(event: any) {
-      const value = (event.target as HTMLInputElement).value;
+    async calculateFromInput(value: string) {
       const { firstNumber, secondNumber, operator } = parseFromInput(value);
       const isNumber = isNumberValues(firstNumber, secondNumber);
       if (isNumber) {
         if (this.showErrorMessage === "flex") this.showErrorMessage = "hide";
-        this.result = calculate(firstNumber, secondNumber, operator);
+        this.result = await calculate(firstNumber, secondNumber, operator);
         this.log.push(
           `${firstNumber} ${operator} ${secondNumber} = ${this.result}`
         );

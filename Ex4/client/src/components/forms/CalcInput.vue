@@ -17,6 +17,6 @@ export default {};
     class="calc-input"
     type="text"
     :value="isFirstNumberState ? firstNumber : secondNumber"
-    @change="(event) => calculateFromInput(event)"
+    @change="(event) => calculateFromInput(event?.target?.value)"
   >
 </template>

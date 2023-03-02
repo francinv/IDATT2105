@@ -1,18 +1,31 @@
 import { Operators } from "@/lib";
-export const calculate = (
+import { client } from "@/store";
+export const calculate = async (
   firstNumber: string,
   secondNumber: string,
   operator: Operators
-): string => {
+): Promise<string> => {
   switch (operator) {
     case Operators.ADD:
-      return (Number(firstNumber) + Number(secondNumber)).toString();
+      return await client.addition({
+        a: Number(firstNumber),
+        b: Number(secondNumber),
+      });
     case Operators.SUBTRACT:
-      return (Number(firstNumber) - Number(secondNumber)).toString();
+      return await client.subtract({
+        a: Number(firstNumber),
+        b: Number(secondNumber),
+      });
     case Operators.MULTIPLY:
-      return (Number(firstNumber) * Number(secondNumber)).toString();
+      return await client.multiply({
+        a: Number(firstNumber),
+        b: Number(secondNumber),
+      });
     case Operators.DIVIDE:
-      return (Number(firstNumber) / Number(secondNumber)).toString();
+      return await client.divide({
+        a: Number(firstNumber),
+        b: Number(secondNumber),
+      });
     default:
       return "0";
   }

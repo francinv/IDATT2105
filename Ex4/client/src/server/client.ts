@@ -23,6 +23,30 @@ class Client {
   async addContactForm(data: any) {
     return this.axiosInstance.post("/forms", data);
   }
+
+  async addition(data: { a: number; b: number }) {
+    return await this.axiosInstance
+      .post("/add", data)
+      .then((res) => String(res.data));
+  }
+
+  async subtract(data: { a: number; b: number }) {
+    return await this.axiosInstance
+      .post("/subtract", data)
+      .then((res) => String(res.data));
+  }
+
+  async multiply(data: { a: number; b: number }) {
+    return await this.axiosInstance
+      .post("/multiply", data)
+      .then((res) => String(res.data));
+  }
+
+  async divide(data: { a: number; b: number }) {
+    return await this.axiosInstance
+      .post("/divide", data)
+      .then((res) => String(res.data));
+  }
 }
 
 export default Client;

@@ -62,7 +62,7 @@ The candidate must:
 
 [Go to code](./Ex2)
 
-[See demo](https://ex2-idatt2105.vercel.app)
+[See demo](https://idatt2105-ex2.vercel.app)
 
 ### Delivery 3
 - Vue Router
@@ -76,7 +76,7 @@ The candidate must:
 
 [Go to code](./Ex3)
 
-[See demo](https://ex3-idatt2105.vercel.app)
+[See demo](https://idatt2105-ex3.vercel.app)
 
 ### Delivery 4
 - Lagdeling
@@ -87,8 +87,8 @@ The candidate must:
 
 [Go to code](./Ex4)
 
-[Backend demo](https://francinvincent.me/IDATT2105/Ex4/calc/)
-[Frontend demo](https://ex4-idatt2105.vercel.app)
+[Backend demo](https://idatt2105-production.up.railway.app/)
+[Frontend demo](https://idatt2105-ex4.vercel.app)
 
 
 

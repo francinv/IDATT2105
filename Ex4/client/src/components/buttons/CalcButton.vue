@@ -22,7 +22,7 @@ export default {
   <button
     :class="style"
     class="calc-btn"
-    @click="(e: MouseEvent) => {action(e); return e;}"
+    @click="action"
   >
     {{ label }}
   </button>

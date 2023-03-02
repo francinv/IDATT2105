@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: "/contact",
-    name: "ContactView",
+    name: "Contact",
     component: ContactView,
   },
 ];
