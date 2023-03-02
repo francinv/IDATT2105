@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { Operators } from "@/lib";
 import { calculate, isNumberValues, parseFromInput } from "@/utils";
+import { EventTarget } from "happy-dom";
 
 export const useCalculatorStore = defineStore("calculator", {
   state: () => ({
@@ -149,7 +150,8 @@ export const useCalculatorStore = defineStore("calculator", {
         }
       }
     },
-    calculateFromInput(value: string) {
+    calculateFromInput(event: any) {
+      const value = (event.target as HTMLInputElement).value;
       const { firstNumber, secondNumber, operator } = parseFromInput(value);
       const isNumber = isNumberValues(firstNumber, secondNumber);
       if (isNumber) {

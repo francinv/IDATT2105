@@ -10,6 +10,7 @@ module.exports = {
     "plugin:vue/vue3-recommended",
     "prettier",
     "plugin:cypress/recommended",
+    "@vue/eslint-config-typescript",
   ],
   plugins: ["cypress", "vitest"],
   rules: {},
