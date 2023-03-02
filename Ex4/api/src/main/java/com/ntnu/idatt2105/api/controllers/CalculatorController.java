@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://127.0.0.1:5173")
+@CrossOrigin(origins = "https://idatt2105-ex4.vercel.app")
 public class CalculatorController {
 
     @Autowired
