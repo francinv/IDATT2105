@@ -62,7 +62,33 @@ The candidate must:
 
 [Go to code](./Ex2)
 
-[See demo](https://calculator-idatt2105.vercel.app)
+[See demo](https://ex2-idatt2105.vercel.app)
+
+### Delivery 3
+- Vue Router
+- Vue 3 Forms med validering
+- Vuex (eller tilsvarende for håndtering av state)
+- API kall med mock API server
+- Component testing med Vitest
+- End-to-end testing med Cypress
+
+[Task description (in Norwegian)](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/25f5fa07-416e-4d30-bb7c-145685de04f2/DATT2105_ving_3%281%29.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230302%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230302T091910Z&X-Amz-Expires=86400&X-Amz-Signature=0d0f4ebca1d1843582e7e2be8202ee3983822679f2f11c28a5a41f8d068ebb56&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22DATT2105%2520%25C3%2598ving%25203%281%29.pdf%22&x-id=GetObject)
+
+[Go to code](./Ex3)
+
+[See demo](https://ex3-idatt2105.vercel.app)
+
+### Delivery 4
+- Lagdeling
+- Logging 
+- REST
+
+[Task description (in Norwegian)](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b58a3086-108b-4f72-81fd-3439ebc10c9e/oving4.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230302%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230302T092930Z&X-Amz-Expires=86400&X-Amz-Signature=d444ab7a01ac31f960d7bf8906a0cbca6f41745a143566f9b039b9131d0db749&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22oving4.pdf%22&x-id=GetObject)
+
+[Go to code](./Ex4)
+
+[Backend demo](https://francinvincent.me/IDATT2105/Ex4/calc/)
+[Frontend demo](https://ex4-idatt2105.vercel.app)
 
 
 

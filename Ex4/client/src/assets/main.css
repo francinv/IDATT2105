@@ -1,0 +1,235 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calc-input {
+  height: 80px;
+  font-size: 32px;
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  border-width: 0;
+  background-color: rgba(44, 39, 38, 0.5);
+  padding: 12px;
+  color: white;
+}
+
+.calc-input:focus {
+  outline: none;
+}
+.calculator-container {
+  border-radius: 12px;
+  min-width: 60%;
+  margin-top: 2rem;
+}
+
+.left {
+  grid-column: 1 / 3;
+}
+.right {
+  grid-column:  3/ 4;
+}
+.right-last {
+    grid-column: 4/ 4;
+}
+.button-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.calc-btn {
+  min-height: 60px;
+  color: white;
+  font-size: 32px;
+  border: 0.5px solid black;
+}
+
+.dark-gray {
+  background-color: rgba(65, 60, 59, 0.5);
+}
+
+.orange {
+  background-color: rgb(242, 163, 60);
+}
+
+.light-gray {
+  background-color: rgba(129, 124, 123, 0.5);
+}
+
+.radius-left {
+  border-bottom-left-radius: 12px;
+}
+
+.radius-right {
+  border-bottom-right-radius: 12px;
+}
+
+.log {
+    margin-top: 1rem;
+    background-color:rgba(65, 60, 59, 0.5);
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    box-shadow: rgba(44, 39, 38, 0.8) 0px 0px 10px 0px;
+    border-radius: 12px;
+    min-width: 60%;
+}
+
+.log-header {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.log-btn {
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    background-color: rgb(242, 163, 60);
+    border-radius: 12px;
+    color: white;
+}
+
+li {
+    margin-left: 0.8rem;
+    font-size: 18px;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.error {
+    background-color: rgba(223, 120, 122, 0.3);
+    max-width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 12px;
+    justify-content: space-between;
+    color: white;
+}
+
+.error h1 {
+    margin-right: 8px;
+}
+
+.flex {
+    display: flex;
+}
+
+.form-input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0.8rem 0;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-submit {
+    margin-top: 1rem;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    background-color: rgb(242, 163, 60);
+    border-radius: 12px;
+    color: white;
+}
+
+.input-label, .text-area-label {
+    color: white;
+    font-size: 20px;
+}
+.base_input {
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    background-color: rgba(44, 39, 38, 0.5);
+    border-radius: 12px;
+    color: white;
+    min-width: 320px;
+}
+
+.text-area {
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    background-color: rgba(44, 39, 38, 0.5);
+    border-radius: 12px;
+    color: white;
+    resize: none;
+    min-width: 320px;
+}
+
+.input-error {
+    color: red;
+    font-size: 10px;
+    margin-left: auto;
+}
+
+.btn-disabled {
+    background-color: rgba(129, 124, 123, 0.5);
+    cursor: not-allowed;
+}
+
+.error-message {
+    margin: 12px;
+    border-radius: 12px;
+    color: white;
+    background-color: rgba(223, 120, 122, 0.3);
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message, .success-message p {
+    font-size: 18px;
+}
+
+.success-message {
+    margin: 12px;
+    border-radius: 12px;
+    color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
