@@ -1,0 +1,70 @@
+{
+  "forms": [
+    {
+      "id": 1,
+      "name": "Test Name",
+      "email": "test@mail.no",
+      "message": "Test message"
+    },
+    {
+      "name": "Francin Vincent",
+      "email": "francin@mail.no",
+      "message": "Test melding",
+      "id": 2
+    },
+    {
+      "name": "Francin Vincent",
+      "email": "francin.vinc@gmail.com",
+      "message": "Test hei",
+      "id": 3
+    },
+    {
+      "name": "John Doe",
+      "email": "john@mail.com",
+      "message": "Hello, this is a message from John.",
+      "id": 4
+    },
+    {
+      "name": "John Doe",
+      "email": "john@mail.com",
+      "message": "Hello, this is a message from John.",
+      "id": 5
+    },
+    {
+      "name": "John Doe",
+      "email": "john@mail.com",
+      "message": "Hello, this is a message from John.",
+      "id": 6
+    },
+    {
+      "name": "John Doe",
+      "email": "john@mail.com",
+      "message": "Hello, this is a message from John.",
+      "id": 7
+    },
+    {
+      "name": "John Doe",
+      "email": "john@mail.com",
+      "message": "Hello, this is a message from John.",
+      "id": 8
+    },
+    {
+      "name": "John Doe",
+      "email": "john@mail.com",
+      "message": "Hello, this is a message from John.",
+      "id": 9
+    },
+    {
+      "name": "Francin Vincent",
+      "email": "francin@gmail.com",
+      "message": "Test",
+      "id": 10
+    },
+    {
+      "name": "John Doe",
+      "email": "john@mail.com",
+      "message": "Hello, this is a message from John.",
+      "id": 11
+    }
+  ]
+}
