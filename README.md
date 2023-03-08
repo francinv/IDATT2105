@@ -66,11 +66,11 @@ The candidate must:
 
 ### Delivery 3
 - Vue Router
-- Vue 3 Forms med validering
-- Vuex (eller tilsvarende for håndtering av state)
-- API kall med mock API server
-- Component testing med Vitest
-- End-to-end testing med Cypress
+- Vue 3 Forms with validation
+- State management 
+- API calls with mock API server
+- Component testing with Vitest
+- End-to-end testing with Cypress
 
 [Task description (in Norwegian)](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/25f5fa07-416e-4d30-bb7c-145685de04f2/DATT2105_ving_3%281%29.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230302%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230302T091910Z&X-Amz-Expires=86400&X-Amz-Signature=0d0f4ebca1d1843582e7e2be8202ee3983822679f2f11c28a5a41f8d068ebb56&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22DATT2105%2520%25C3%2598ving%25203%281%29.pdf%22&x-id=GetObject)
 
@@ -87,8 +87,21 @@ The candidate must:
 
 [Go to code](./Ex4)
 
-[Backend demo](https://idatt2105-production.up.railway.app/)
+[Backend demo](https://idatt2105-ex4.up.railway.app/)
 [Frontend demo](https://idatt2105-ex4.vercel.app)
+
+### Delivery 5
+- Spring Security
+- Spring JPA with PostgreSQL
+- JWT Authentication
+- Session Storage
+
+[Task description (in Norwegian)](https://www.notion.so/francin/ving-5-0bc258e1e12345d3a38ac42da54715c3?pvs=4)
+
+[Go to code](./Ex5)
+
+[Backend demo](https://idatt2105-ex5.up.railway.app/)
+[Frontend demo](https://idatt2105-ex5.vercel.app)
 
 
 
