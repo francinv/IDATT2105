@@ -4,26 +4,22 @@ export default {
   props: {
     label: {
       type: String,
-      default: '',
+      default: "",
     },
     action: {
       type: Function,
-      default: () => {},
+      default: () => 1,
     },
-    style: {
+    additionalClasses: {
       type: String,
-      default: '',
+      default: "",
     },
   },
-};
+}
 </script>
 
 <template>
-  <button
-    :class="style"
-    class="calc-btn"
-    @click="action"
-  >
+  <button :class="additionalClasses" class="calc-btn" @click="action">
     {{ label }}
   </button>
 </template>

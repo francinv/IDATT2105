@@ -1,7 +1,6 @@
 package com.ntnu.idatt2105.api.config;
 
 import com.ntnu.idatt2105.api.security.JwtAuthenticationFilter;
-import jakarta.servlet.Filter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,8 +21,9 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf()
-            .disable()
+            .cors()
+            .and()
+            .csrf().disable()
             .authorizeHttpRequests()
             .requestMatchers("/api/auth/**")
             .permitAll()

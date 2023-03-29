@@ -3,17 +3,64 @@
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem 2rem;
 
   font-weight: normal;
 }
 
 header {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    padding: 12px;
+    background-color: rgba(44, 39, 38, 0.8);
+    border-radius: 20px;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0 3rem;
+}
+
+button {
+    transition: background-color 0.2s ease-in-out;
+}
+header > button {
+    background-color: rgba(44, 39, 38, 0.8);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 12px;
+    padding: 0.5rem 1.5rem;
+
+    margin: 0;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-left: 1rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    transition: background-color 0.2s ease-in-out;
+}
+header > a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+header > button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.link-active {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px 0px;
+    border: none;
 }
 
 main {
@@ -21,6 +68,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
 }
 
 .calc-input {
@@ -231,5 +279,30 @@ li {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 255, 0, 0.3);
+}
+
+.btn-left-rounded {
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    background-color: rgb(242, 163, 60);
+    color: white;
+    border-radius: 12px 0 0 12px;
+}
+.btn-right-rounded {
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    background-color: rgb(242, 163, 60);
+    color: white;
+    border-radius: 0 12px 12px 0;
+}
+.btn-paginated-disabled {
+    background-color: rgba(129, 124, 123, 0.5);
+    cursor: not-allowed;
 }
 

@@ -1,46 +1,42 @@
 <script lang="ts">
-import { BaseButton, TextInput, TextArea } from "@/components";
-import { useField, useForm } from "vee-validate";
-import contactSchema from "@/schemas";
-import Client from "@/server/client";
-import { BASE_URL } from "@/constants";
-import { ref } from "vue";
-
+import { BaseButton, TextInput, TextArea, TopHeader } from "@/components"
+import { useField, useForm } from "vee-validate"
+import { contactSchema } from "@/schemas"
+import { ref } from "vue"
+import { apiClient } from "@/server"
 
 export default {
-  components: {BaseButton, TextArea, TextInput},
+  components: { TopHeader, BaseButton, TextArea, TextInput },
   setup() {
     const { handleSubmit, errors, resetField } = useForm({
-      validationSchema: contactSchema
-    });
+      validationSchema: contactSchema,
+    })
 
-    const {value: name} = useField("name"); // Saved in state ??
-    const {value: email} = useField("email"); // Saved in state ??
-    const {value: message} = useField("message");
+    const { value: name } = useField("name")
+    const { value: email } = useField("email")
+    const { value: message } = useField("message")
 
-    const isLoading = ref(false);
-    const isSuccessful = ref(false);
-    const isFailed = ref(false);
-    const apiError = ref("");
-
-    const client = new Client(BASE_URL);
+    const isLoading = ref(false)
+    const isSuccessful = ref(false)
+    const isFailed = ref(false)
+    const apiError = ref("")
 
     const submit = handleSubmit(async (values) => {
-      isLoading.value = true;
-      const res = await client.getInstance().addContactForm(values);
-      isLoading.value = false;
+      isLoading.value = true
+      const res = await apiClient.getInstance().addContactForm(values)
+      isLoading.value = false
       if (res.status === 200 || res.status === 201) {
-        isSuccessful.value = true;
+        isSuccessful.value = true
       } else {
-        isFailed.value = true;
-        apiError.value = res.data.message;
+        isFailed.value = true
+        apiError.value = res.data.message
       }
-      resetField("message");
-    });
+      resetField("message")
+    })
 
     const isValid = () => {
-      return Object.keys(errors.value).length === 0;
-    };
+      return Object.keys(errors.value).length === 0
+    }
 
     return {
       name,
@@ -52,30 +48,21 @@ export default {
       isLoading,
       isSuccessful,
       isFailed,
-      apiError
-    };
+      apiError,
+    }
   },
-};
+}
 </script>
 
 <template>
-  <header>
-    <img
-        alt="Calculator logo"
-        class="logo"
-        src="@/assets/logo.png"
-        width="125"
-        height="125"
-    />
-    <h1>Kontakt oss</h1>
-    <p>Gi tilbakemelding til kalkulatoren her.</p>
-  </header>
+  <TopHeader />
   <main>
+    <h1>Kontakt oss</h1>
     <form class="contact-form" @submit.prevent="submit">
       <TextInput v-model="name" label="Navn" placeholder="Ditt navn" type="text" :error="errors.name" name="name" />
       <TextInput v-model="email" label="E-post" placeholder="Din e-post" type="email" :error="errors.email" name="email" />
       <TextArea v-model="message" label="Din melding" placeholder="Skriv din melding her" rows="5" :error="errors.message" name="message" />
-      <BaseButton type="submit" :label="isLoading ? 'Oppdaterer' : 'Send'" button-class="btn-submit" :disabled="!isValid()"/>
+      <BaseButton type="submit" :label="isLoading ? 'Oppdaterer' : 'Send'" button-class="btn-submit" :disabled="!isValid()" />
       <div v-if="isSuccessful" class="success-message">
         <h1 style="margin-right: 0.5rem">✅</h1>
         <p>Takk for din tilbakemelding!</p>
@@ -92,4 +79,3 @@ export default {
     </form>
   </main>
 </template>
-

@@ -1,21 +1,10 @@
 <script setup lang="ts">
-import {CalcInput, CalculatorButton} from "@/components";
-import { useCalculatorStore } from "@/store";
-import { storeToRefs } from "pinia";
+import { CalcInput, CalculatorButton } from "@/components"
+import { useStore } from "@/store"
+import { storeToRefs } from "pinia"
 
-const { showErrorMessage } = storeToRefs(useCalculatorStore());
-const {
-  equals,
-  negate,
-  clear,
-  divide,
-  multiply,
-  del,
-  subtract,
-  addition,
-  decimal,
-  setNumber,
-} = useCalculatorStore();
+const { showErrorMessage } = storeToRefs(useStore())
+const { equals, negate, clear, divide, multiply, del, subtract, addition, decimal, setNumber } = useStore()
 </script>
 
 <template>
@@ -40,23 +29,13 @@ const {
       <CalculatorButton label="2" :action="() => setNumber(2)" class="light-gray" />
       <CalculatorButton label="3" :action="() => setNumber(3)" class="light-gray" />
       <CalculatorButton label="+" :action="addition" class="orange" />
-      <CalculatorButton
-        label="0"
-        :action="() => setNumber(0)"
-        class="light-gray left radius-left"
-      />
+      <CalculatorButton label="0" :action="() => setNumber(0)" class="light-gray left radius-left" />
       <CalculatorButton label="," :action="decimal" class="light-gray right" />
-      <CalculatorButton
-        label="="
-        :action="equals"
-        class="orange right-last radius-right"
-      />
+      <CalculatorButton label="=" :action="equals" class="orange right-last radius-right" />
     </div>
-    <div class="error" :class="showErrorMessage">
+    <div v-if="showErrorMessage" class="error">
       <h1>‼️</h1>
-      <h3>
-        Ser ut som det er bokstaver i feltet. Vennligst fjern og prøv på nytt.
-      </h3>
+      <h3>Ser ut som det er bokstaver i feltet. Vennligst fjern og prøv på nytt.</h3>
     </div>
   </div>
 </template>

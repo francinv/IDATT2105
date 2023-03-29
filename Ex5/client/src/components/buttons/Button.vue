@@ -1,11 +1,6 @@
 <template>
   <div class="btn-container">
-    <button
-      :type="type"
-      :class="[buttonClass, {'btn-disabled': disabled}]"
-      :disabled="disabled"
-      @click="action"
-    >
+    <button :type="type" :class="[buttonClass, { 'btn-disabled': disabled }]" :disabled="disabled" @click="action">
       {{ label }}
     </button>
   </div>
@@ -17,24 +12,24 @@ export default {
   props: {
     label: {
       type: String,
-      default: ''
+      default: "",
     },
     type: {
       type: String,
-      default: 'button'
+      default: "button",
     },
     action: {
       type: Function,
-      default: () => {}
+      default: () => 1,
     },
     buttonClass: {
       type: String,
-      default: ''
+      default: "",
     },
     disabled: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
-};
+}
 </script>

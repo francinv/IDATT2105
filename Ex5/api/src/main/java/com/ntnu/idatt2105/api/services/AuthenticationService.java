@@ -6,6 +6,8 @@ import com.ntnu.idatt2105.api.models.LoginRequest;
 import com.ntnu.idatt2105.api.models.RegisterRequest;
 import com.ntnu.idatt2105.api.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -19,6 +21,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    Logger logger = LoggerFactory.getLogger(AuthenticationService.class);
 
     public AuthenticationResponse register(RegisterRequest registerRequest) {
         var user = User.builder()
@@ -47,5 +50,17 @@ public class AuthenticationService {
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
+    }
+
+    public Boolean validateToken(String token, String username) throws UsernameNotFoundException {
+        var user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+       try {
+           jwtService.isTokenValid(token, user);
+           return true;
+       } catch (Exception e) {
+           logger.error(e.getMessage());
+           return false;
+       }
     }
 }

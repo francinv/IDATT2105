@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { storeToRefs } from "pinia";
-import { useCalculatorStore } from "@/store";
+import { storeToRefs } from "pinia"
+import { useStore } from "@/store"
 
-const { log } = storeToRefs(useCalculatorStore());
+const { log } = storeToRefs(useStore())
 </script>
 
 <script lang="ts">
-export default {
-  data: function () {
+import { defineComponent } from "vue"
+
+export default defineComponent({
+  data() {
     return {
-      showLogClass: "show",
       showLog: true,
-    };
+    }
   },
   methods: {
-    handleShow: function () {
-      this.showLogClass = this.showLog ? "hide" : "show";
-      this.showLog = !this.showLog;
+    handleShow() {
+      this.showLog = !this.showLog
     },
   },
-};
+})
 </script>
 
 <template>
@@ -30,8 +30,8 @@ export default {
         {{ showLog ? "Skjul 👀" : "Vis 👀" }}
       </button>
     </div>
-    <ol :class="showLogClass">
-      <li v-for="element in log" v-bind:key="element">{{ element }}</li>
+    <ol v-if="showLog">
+      <li v-for="element in log" :key="element">{{ element }}</li>
     </ol>
   </div>
 </template>

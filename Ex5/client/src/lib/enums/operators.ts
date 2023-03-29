@@ -1,5 +1,5 @@
 export enum Operators {
-  ADD = "+",
+  ADDITION = "+",
   SUBTRACT = "-",
   MULTIPLY = "*",
   DIVIDE = "/",

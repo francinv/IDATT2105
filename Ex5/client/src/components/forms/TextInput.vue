@@ -4,7 +4,7 @@
     <input
       :name="name"
       class="base_input"
-      v-bind="{ ...$attrs, onInput: updateValue}"
+      v-bind="{ ...$attrs, onInput: updateValue }"
       :id="uuid"
       :value="modelValue"
       :placeholder="label"
@@ -16,37 +16,37 @@
 </template>
 
 <script lang="ts">
-import {generateUUID, SetupFormComponent} from "@/utils";
-import type {ComponentObjectPropsOptions} from "vue";
+import { generateUUID, SetupFormComponent } from "@/utils"
+import type { ComponentObjectPropsOptions } from "vue"
 
 export default {
   name: "TextInput",
   props: {
     label: {
       type: String,
-      default: ''
+      default: "",
     },
     error: {
       type: String,
-      default: ''
+      default: "",
     },
     modelValue: {
       type: [String, Number],
-      default: ''
+      default: "",
     },
     name: {
       type: String,
-      default: ''
-    }
+      default: "",
+    },
   },
-  setup (props: ComponentObjectPropsOptions, context: any) {
-    const { updateValue } = SetupFormComponent(props, context);
-    const uuid = generateUUID();
+  setup(props: ComponentObjectPropsOptions, context: any) {
+    const { updateValue } = SetupFormComponent(props, context)
+    const uuid = generateUUID()
 
     return {
       updateValue,
-      uuid
-    };
-  }
-};
+      uuid,
+    }
+  },
+}
 </script>
