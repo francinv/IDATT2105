@@ -1,6 +1,6 @@
 package com.ntnu.idatt2105.api.models;
 
-import com.ntnu.idatt2105.api.entities.User;
+import com.ntnu.idatt2105.api.entities.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CalculationParams {
-    private double a;
-    private double b;
-    private String requestingUsername;
+public class RegisterRequest {
+    private String username;
+    private String password;
+    private Role role;
 }
